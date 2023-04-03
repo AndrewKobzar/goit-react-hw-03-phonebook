@@ -1,0 +1,36 @@
+
+.text {
+  font-weight: 600;
+  color: var(--main-text-color);
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+
+
+.label {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: 100%;
+  justify-content: center;
+
+}
+.input {
+  height: 40px;
+  padding: 0 10px;
+
+  border: 1px solid transparent;
+  border-radius: 5px;
+  outline: none;
+  
+  color: black;
+  font-size: 14px;
+    transition: background-color 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
+
+}
+
+.input:focus {
+  background-color: rgb(236, 237, 237);
+}

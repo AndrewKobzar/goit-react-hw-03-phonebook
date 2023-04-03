@@ -1,0 +1,15 @@
+.contactList{
+padding: 0 30px;
+
+}
+.item {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  margin-bottom: 15px;
+ 
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
