@@ -19,7 +19,6 @@ class App extends Component {
   componentDidMount() {
     const contacts = localStorage.getItem('contacts');
     const parseContacts = JSON.parse(contacts);
-
     if (parseContacts) {
       this.setState({ contacts: parseContacts });
     }
@@ -28,20 +27,19 @@ class App extends Component {
   componentDidUpdate() {
     const contacts = this.state.contacts;
     localStorage.setItem('contacts', JSON.stringify(contacts));
-  
   }
-  
 
   addContact = ({ name, number }) => {
     const { contacts } = this.state;
     const newContact = { id: nanoid(), name, number };
 
-    contacts.some(contact => contact.name === name)
+    contacts.some(contact => contact.name.toLowerCase() === name.toLowerCase())
       ? window.alert(`${name} is already in contacts.`)
       : this.setState(({ contacts }) => ({
           contacts: [newContact, ...contacts],
         }));
   };
+
 
   deleteContact = contactId => {
     this.setState(prevState => ({
@@ -60,6 +58,8 @@ class App extends Component {
       name.toLowerCase().includes(normalizedFilter)
     );
   };
+
+
 
   render() {
     const { filter } = this.state;
